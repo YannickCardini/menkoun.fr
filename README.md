@@ -11,7 +11,21 @@ Just open [index.html](src/index.html) with a browser or run it on docker.
 
 ```
 docker build -t simple-website .
-docker run -it --rm -d -p 8080:80 --name simplewebsite simple-website && docker attach simplewebsite
+docker run -d --name=simplewebsite -p 3400:80 simple-website
+```
+### Transfer to a VPS
+
+after build it:
+```
+docker save simple-website | gzip > simple-website.tar.gz
+scp simple-website.tar.gz ubuntu@51.79.255.217:~/Documents/docker/simple-website.tar.gz && rm simple-website.tar.gz
+```
+
+### On the VPS server
+
+```
+docker load < /home/ubuntu/Documents/docker/simple-website.tar.gz && rm /home/ubuntu/Documents/docker/simple-website.tar.gz
+docker run -d --name=simplewebsite -p 3400:80 simple-website
 ```
 
 
