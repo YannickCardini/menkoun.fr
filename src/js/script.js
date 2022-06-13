@@ -2,7 +2,7 @@ var browser_data = [
                         {
                             "browser" : "Internet Explorer",
                             "info"  : "Internet Explorer info",
-                            "rating" : 1
+                            "rating" : 2
                         },
                         {
                             "browser" : "Opera",

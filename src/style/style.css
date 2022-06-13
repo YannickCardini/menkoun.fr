@@ -13,7 +13,7 @@ body
 p
 { padding: 0 0 20px 0;
   line-height: 1.5em;
-  font-size: 107%;}
+  font-size: 15px;}
 
 img
 { border: 0;}
@@ -92,7 +92,7 @@ ol li
   margin-right: auto;}
 
 #main
-{ width: 950px;
+{ width: 100%;
   margin: 20px auto;}
 
 #header
@@ -100,7 +100,7 @@ ol li
   height: 145px;}
 
 #logo
-{ width: 950px;
+{ width: 100%;
   float: left;
   height: 100px;
   background: transparent;
@@ -162,6 +162,28 @@ ul li i {
   background: #fff;
   border: 1px solid #E7E7E7;}
 
+  @media only screen and (max-width: 950px) {
+    #site_content{
+      width: 100%;
+    }
+    #header{
+      width: 100%;
+    }
+    #sidebar_container {
+      display: none;
+    }
+    #content{
+      width: 90% !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .slogan{
+      display: none;
+    }
+  }
+
+
 #sidebar_container
 {
   width: 250px;
@@ -218,7 +240,7 @@ padding: 0 15px 15px 15px;}
 { list-style-type: none;
   background: url(bullet.png) no-repeat;
   margin: 0 0 6px 0;
-  padding: 0 0 4px 25px;
+  padding: 0 4px 4px 25px;
   line-height: 1.5em;}
 
 #footer
