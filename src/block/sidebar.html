@@ -1,0 +1,43 @@
+
+
+<div id="sidebar_container">
+
+    <div class="sidebar">
+        <h3>Brown blotched tabby maine coon</h3>
+            <h4>Qu'est ce que c'est ?</h4>
+            <h5>1st July 2011</h5>
+            <p>Le Maine Coon brown blotched tabby (brun tacheté tigré en français)
+                est ...<br /><a href="/pages/brown-blotched-tabby.html">Lire la suite</a></p>
+    </div>
+
+    <!-- <div class="sidebar">
+    <h3>Newsletter</h3>
+    <p>If you would like to receive our newletter, please enter your email address and click 'Subscribe'.</p>
+    <form method="post" action="#" id="subscribe">
+        <p style="padding: 0 0 9px 0;"><input class="search" type="text" name="email_address" value="your email address" onclick="javascript: document.forms['subscribe'].email_address.value=''" /></p>
+        <p><input class="subscribe" name="subscribe" type="submit" value="Subscribe" /></p>
+    </form>
+    </div>
+
+    <div class="sidebar">
+        <h3>Latest Blog</h3>
+        <h4>Website Goes Live</h4>
+        <h5>1st July 2011</h5>
+        <p>We have just launched our new website. Take a look around, we'd love to know what you think.....<br /><a href="#">read more</a></p>
+    </div> -->
+
+</div>
+
+<script>
+    $(document).ready(function(){
+        var d = new Date();
+
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+
+        var output = d.getFullYear() + '/' +
+            (month<10 ? '0' : '') + month + '/' +
+            (day<10 ? '0' : '') + day;
+        $('h5').text(output);
+    });
+    </script>
