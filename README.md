@@ -1,4 +1,4 @@
-# Simple Design Website :cool:
+#  A Mainecoon Simple Website :cat:
 
 I feel that the simpler the better, both from a developer and a user standpoint.
 This light website use JavaScript/HTML/CSS/JQuery.
@@ -10,22 +10,22 @@ Just open [index.html](src/index.html) with a browser or run it on docker.
 ## Docker :whale:
 
 ```
-docker build -t simple-website .
-docker run -d --name=simplewebsite -p 3400:80 simple-website
+docker build -t mainecoon-click .
+docker run --name=mainecoonclick -p 3400:80 mainecoon-click
 ```
-### Transfer to a VPS
+### Transfer to a VPS :computer:
 
 after build it:
 ```
-docker save simple-website | gzip > simple-website.tar.gz
-scp simple-website.tar.gz ubuntu@51.79.255.217:~/Documents/docker/simple-website.tar.gz && rm simple-website.tar.gz
+docker save mainecoon_click | gzip > mainecoon_click.tar.gz
+scp mainecoon_click.tar.gz ubuntu@51.79.255.217:~/Documents/docker/mainecoon_click.tar.gz && rm mainecoon_click.tar.gz
 ```
 
-### On the VPS server
+### On the VPS server :computer:
 
 ```
-docker load < /home/ubuntu/Documents/docker/simple-website.tar.gz && rm /home/ubuntu/Documents/docker/simple-website.tar.gz
-docker run -d --name=simplewebsite -p 3400:80 simple-website
+docker load < /home/ubuntu/Documents/docker/mainecoon_click.tar.gz && rm /home/ubuntu/Documents/docker/mainecoon_click.tar.gz
+docker run -d --name=mainecoonclick -p 80:80 mainecoon_click
 ```
 
 
