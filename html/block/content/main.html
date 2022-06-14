@@ -1,6 +1,31 @@
+<style>
+@media only screen and (min-width: 600px) {
+  .block-image {
+    display: flex;
+  }
+  .img-portrait{
+    width: 220px;
+    height:304px;
+    margin:3%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .block-image {
+    display: block;
+  }
+  .img-portrait{
+    width: 220px;
+    height:304px;
+    margin:3% auto;
+    display: block;
+  }
+
+}
+</style>
+
 <h1>Maine coon</h1>
-<div style="display: flex;">
-    <img src="/assets/Male-Maine-Coon-Brown-Blotched-Tabby.jpg" style="width: 30%;margin:3%;">
+<div class="block-image">
+    <img src="/assets/Male-Maine-Coon-Brown-Blotched-Tabby.jpg" class="img-portrait">
     <p style="margin:4% 0;">Les chats Maine Coon sont le choix parfait si vous recherchez une race de chat grande.
     Ces beautés aux cheveux longs pèsent généralement entre 11 et 15 kilogrammes et ont de longues queues.
     Ils ont également une fourrure très douce, ce qui en fait de grands amateurs de climats froids et chauds.
