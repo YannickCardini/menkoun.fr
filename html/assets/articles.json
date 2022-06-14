@@ -1,12 +1,16 @@
 {
     "articles": [
         {
-            "name": "brown-blotched-tabby",
-            "href": "/pages/brown-blotched-tabby.html"
+            "name": "Brown blotched tabby maine coon",
+            "href": "/pages/brown-blotched-tabby.html",
+            "description": "Le Maine Coon brown blotched tabby (brun tacheté tigré en français) est ...",
+            "subtitle": "Qu'est ce que c'est ?"
         },
         {
-            "name": "mainecoon",
-            "href": "/"
+            "name": "Maine coon",
+            "href": "/pages/maine-coon.html",
+            "description": "Les chats Maine Coon sont le choix parfait si vous recherchez une race de ...",
+            "subtitle": "Qu'est ce que c'est ?"
         }
     ]
 }

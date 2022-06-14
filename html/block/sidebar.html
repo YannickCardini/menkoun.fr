@@ -1,14 +1,4 @@
-
-
 <div id="sidebar_container">
-
-    <div class="sidebar">
-        <h3>Brown blotched tabby maine coon</h3>
-            <h4>Qu'est ce que c'est ?</h4>
-            <h5 id="top-h5">1st July 2011</h5>
-            <p>Le Maine Coon brown blotched tabby (brun tacheté tigré en français)
-                est ...<br /><a href="/pages/brown-blotched-tabby.html">Lire la suite</a></p>
-    </div>
 
     <!-- <div class="sidebar">
     <h3>Newsletter</h3>
@@ -17,27 +7,63 @@
         <p style="padding: 0 0 9px 0;"><input class="search" type="text" name="email_address" value="your email address" onclick="javascript: document.forms['subscribe'].email_address.value=''" /></p>
         <p><input class="subscribe" name="subscribe" type="submit" value="Subscribe" /></p>
     </form>
-    </div>
-
-    <div class="sidebar">
-        <h3>Latest Blog</h3>
-        <h4>Website Goes Live</h4>
-        <h5>1st July 2011</h5>
-        <p>We have just launched our new website. Take a look around, we'd love to know what you think.....<br /><a href="#">read more</a></p>
     </div> -->
+
 
 </div>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         var d = new Date();
 
-        var month = d.getMonth()+1;
+        var month = d.getMonth() + 1;
         var day = d.getDate();
 
-        var output = d.getFullYear() + '/' +
-            (month<10 ? '0' : '') + month + '/' +
-            (day<10 ? '0' : '') + day;
-        $('#top-h5').text(output);
+        var today = d.getFullYear() + '/' +
+            (month < 10 ? '0' : '') + month + '/' +
+            (day < 10 ? '0' : '') + day;
+        $('#top-h5').text(today);
+
+
+        $.getJSON("/assets/articles.json", function (json) {
+            json.articles.forEach(article => {
+
+                var createDiv = document.createElement('div');
+                var createA = document.createElement('a');
+                var createAP = document.createElement('a');
+                var createH3 = document.createElement('h3');
+                var createH4 = document.createElement('h4');
+                var createH5 = document.createElement('h5');
+                var createP = document.createElement('p');
+                var br = document.createElement("br");
+
+                var createH3Text = document.createTextNode(article.name);
+                var createH4Text = document.createTextNode(article.subtitle);
+                var createH5Text = document.createTextNode(today);
+                var createAPText = document.createTextNode("Lire la suite");
+                var createPText = document.createTextNode(article.description);
+
+                createDiv.setAttribute('class',"sidebar");
+                createA.setAttribute('href', article.href);
+                createAP.setAttribute('href', article.href);
+
+                createH3.append(createH3Text);
+                createH4.append(createH4Text);
+                createH5.append(createH5Text);
+                createP.append(createPText);
+                createAP.append(br);
+                createAP.append(createAPText);
+
+                createP.append(createAP)
+                createA.append(createH3);
+
+                createDiv.append(createA);
+                createDiv.append(createH4);
+                createDiv.append(createH5);
+                createDiv.append(createP);
+
+                $('#sidebar_container').append(createDiv);
+            });
+        });
     });
-    </script>
+</script>

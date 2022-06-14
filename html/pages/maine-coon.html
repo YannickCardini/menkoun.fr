@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script>
+    $(function(){ $("head").load("/block/head.html") });
+</script>
+</head>
+
+<body>
+  <div id="main">
+
+    <script> 
+      $(document).ready(function(){
+        $('#header').load('/block/header.html');
+        $('#content').load('/block/content/maine-coon.html');
+        $('#sidebar_container').load('/block/sidebar.html');
+        $('#footer').load('/block/footer.html')
+      });
+    </script>
+
+    <div id="header"></div>
+
+    <div id="site_content">
+      <div id="sidebar_container"></div>
+      <div id="content"></div>
+    </div>
+
+
+    <div id="footer"></div>
+
+  </div>
+
+</body>
+</html>
