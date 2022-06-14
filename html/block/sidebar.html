@@ -5,7 +5,7 @@
     <div class="sidebar">
         <h3>Brown blotched tabby maine coon</h3>
             <h4>Qu'est ce que c'est ?</h4>
-            <h5>1st July 2011</h5>
+            <h5 id="top-h5">1st July 2011</h5>
             <p>Le Maine Coon brown blotched tabby (brun tacheté tigré en français)
                 est ...<br /><a href="/pages/brown-blotched-tabby.html">Lire la suite</a></p>
     </div>
@@ -38,6 +38,6 @@
         var output = d.getFullYear() + '/' +
             (month<10 ? '0' : '') + month + '/' +
             (day<10 ? '0' : '') + day;
-        $('h5').text(output);
+        $('#top-h5').text(output);
     });
     </script>

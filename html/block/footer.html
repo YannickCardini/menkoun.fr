@@ -1,6 +1,6 @@
 <div id="footer">
-    <img src="/assets/logo.png">
-    <p id="links"></p>
+    <a href="/"><img src="/assets/logo.png"></a>
+    <p id="links-head"></p>
     <p><a href="https://www.flaticon.com/fr/icones-gratuites/pokemon" title="pokémon icônes">Pokémon icônes créées par Roundicons Freebies - Flaticon</a></p>
     <p>Copyright <img src="/assets/Copyright.svg" width="11px;"> 2022 - All Rights Reserved.</p>
     <script>
@@ -10,12 +10,12 @@
                 var createAText = document.createTextNode(article.name) ;
                 createA.setAttribute('href', article.href);
                 createA.append(createAText);
-                $('#links').append(createA);
+                $('#links-head').append(createA);
                 var createSpan = document.createElement('span');
                 createSpan.append(document.createTextNode(" | "));
-                $('#links').append(createSpan);
+                $('#links-head').append(createSpan);
             });
-            $('#links').find("span:last").remove();
+            $('#links-head').find("span:last").remove();
         });
     </script>
 </div>
