@@ -14,20 +14,20 @@
 
 <script>
     $(document).ready(function () {
-        var d = new Date();
+        // var d = new Date();
 
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
+        // var month = d.getMonth() + 1;
+        // var day = d.getDate();
 
-        var today = d.getFullYear() + '/' +
-            (month < 10 ? '0' : '') + month + '/' +
-            (day < 10 ? '0' : '') + day;
-        $('#top-h5').text(today);
+        // var today = d.getFullYear() + '/' +
+        //     (month < 10 ? '0' : '') + month + '/' +
+        //     (day < 10 ? '0' : '') + day;
+        // $('#top-h5').text(today);
 
 
         $.getJSON("/assets/articles.json", function (json) {
             json.articles.forEach(article => {
-
+                console.log(article)
                 var createDiv = document.createElement('div');
                 var createA = document.createElement('a');
                 var createAP = document.createElement('a');
@@ -39,7 +39,7 @@
 
                 var createH3Text = document.createTextNode(article.name);
                 var createH4Text = document.createTextNode(article.subtitle);
-                var createH5Text = document.createTextNode(today);
+                var createH5Text = document.createTextNode(article.date);
                 var createAPText = document.createTextNode("Lire la suite");
                 var createPText = document.createTextNode(article.description);
 
