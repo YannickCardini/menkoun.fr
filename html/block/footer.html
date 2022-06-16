@@ -4,7 +4,7 @@
     <p><a href="https://www.flaticon.com/fr/icones-gratuites/pokemon" title="pokémon icônes">Pokémon icônes créées par Roundicons Freebies - Flaticon</a></p>
     <p>Copyright <img src="/assets/Copyright.svg" width="11px;" alt="copyright logo"> 2022 - All Rights Reserved.</p>
     <script>
-        $.getJSON("/assets/articles.json", function (json) {
+        $.getJSON("/json/articles.json", function (json) {
             json.articles.forEach(article => {
                 var createA = document.createElement('a');
                 var createAText = document.createTextNode(article.name) ;
