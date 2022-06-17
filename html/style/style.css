@@ -98,22 +98,17 @@ a:hover {
   margin: 20px auto;
 }
 
-ul {
-  margin: 2px 0 22px 17px;
-}
-
-ul li {
-  list-style-type: circle;
-  margin: 0 0 0 0;
-  padding: 0 0 4px 5px;
-}
-
 ol {
   margin: 8px 0 22px 20px;
 }
 
 ol li {
   margin: 0 0 11px 0;
+}
+
+ul {
+  margin-left: 6%;
+  font-size: 15px;
 }
 
 #main,
@@ -167,32 +162,6 @@ ol li {
   color: #111;
   /* -- to make the logo go to the right */
   float: right;
-}
-
-ul li a {
-  width: 120px;
-  display: inline-block;
-}
-
-ul li.clicked a {
-  background: #fff;
-  border-bottom: 0;
-  color: darkred;
-}
-
-ul li.current a {
-  background: #fff;
-  border-bottom: 0;
-  color: #F14E23;
-  font-style: italic;
-}
-
-ul li a:hover {
-  color: #F14E23;
-}
-
-ul li i {
-  color: gold;
 }
 
 #site_content {
@@ -280,18 +249,6 @@ ul li i {
   width: 630px;
   padding: 25px 0 5px 25px;
   margin: 0;
-}
-
-#content ul {
-  margin: 2px 0 22px 0px;
-}
-
-#content ul li {
-  list-style-type: none;
-  background: url(bullet.png) no-repeat;
-  margin: 0 0 6px 0;
-  padding: 0 4px 4px 25px;
-  line-height: 1.5em;
 }
 
 #footer {
