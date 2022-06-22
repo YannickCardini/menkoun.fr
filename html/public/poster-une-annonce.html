@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Poster une annoce</title>
+    <meta name="description"
+        content="Vous souhaitez donner votre chat maine coon, poster une annonce ici pour qu'il soit visible partout en France." />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <link rel="stylesheet" type=" text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/miaouss.svg">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="main">
+
+        <style>
+            .wide {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: 1px solid #555;
+                outline: none;
+            }
+
+            .wide:focus {
+                background-color: lightblue;
+            }
+
+            button {
+                background-color: #4CAF50;
+                /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                display: block;
+                margin: 3% auto;
+                font-weight: bold;
+            }
+
+            input[type=button] {
+                border: none;
+                color: black;
+                padding: 10px 22px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin: 4px 2px;
+                cursor: pointer;
+                display: block;
+                font-weight: bold;
+                border: 2px solid darkslategrey;
+                margin: 2% auto;
+            }
+        </style>
+
+        <div id="header"></div>
+
+        <div id="site_content">
+            <div id="sidebar_container"></div>
+            <!--Main Content Start Here-->
+            <div id="content">
+                <h1>Donner votre Maine coon</h1>
+                <form action="http://localhost:3000/insert" method="POST">
+                    <label for="image">Photo du maine coon:</label>
+                    <input type="button" id="loadFileXml" value="Choisissez une photo"
+                        onclick="document.getElementById('file').click();" />
+                    <input type="file" style="display:none;" id="file" name="file" accept="image/*" />
+                    <label for="catname">Nom du Maine coon*: </label>
+                    <input class="wide" type="text" name="catname"><br>
+                    <label for="descri">Description: </label>
+                    <input class="wide" type="text" name="descri" style='height:120px'><br>
+
+
+                    <h2>Contact</h2>
+                    <label for="email">Votre e-mail*: </label>
+                    <input class="wide" type="email" name="email"><br>
+                    <label for="phone">Votre téléphone: (optionnel) </label>
+                    <input class="wide" type="tel" name="phone"><br>
+                    <button type="submit">Poster l'annonce</button>
+                </form>
+            </div>
+            <!--Main Content End Here-->
+
+        </div>
+
+
+        <div id="footer"></div>
+        <script type="text/javascript" src="/js/header.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+        <script type="text/javascript" src="/js/footer.js"></script>
+
+
+    </div>
+
+</body>
+
+</html>
