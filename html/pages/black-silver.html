@@ -18,19 +18,6 @@
 <body>
   <div id="main">
 
-    <script>
-      fetch('http://localhost:3000/insert', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams({
-          'values': '("chat gentil")',
-        })
-      }).then(function (response) {
-        console.log(response);
-      });
-    </script>
     <div id="header"></div>
 
     <div id="site_content">
