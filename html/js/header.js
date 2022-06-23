@@ -5,6 +5,7 @@ var createDivSlogan = document.createElement('div');
 var createASlogan = document.createElement('a');
 var createImg = document.createElement('img');
 
+createImgH1.style.width = '40px';
 createImg.setAttribute('src','/assets/logo.png');
 createImg.setAttribute('alt','Logo');
 createASlogan.append(createImg);
