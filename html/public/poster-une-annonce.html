@@ -65,7 +65,14 @@
                 border: 2px solid darkslategrey;
                 margin: 2% auto;
             }
+
+            img {
+                margin: auto;
+                display: none;
+            }
         </style>
+
+
 
         <div id="header"></div>
 
@@ -75,14 +82,18 @@
             <div id="content">
                 <h1>Donner votre Maine coon</h1>
                 <form action="http://localhost:3000/insert" method="POST">
+
                     <label for="image">Photo du maine coon:</label>
-                    <input type="button" id="loadFileXml" value="Choisissez une photo"
-                        onclick="document.getElementById('file').click();" />
-                    <input type="file" style="display:none;" id="file" name="file" accept="image/*" />
+                    <input type="button" id="loadImg" value="Choisissez une photo"
+                        onclick="document.getElementById('inputHidden').click();" />
+                    <img id="output" alt="Photo du maine coon à donner" width="200px" />
+                    <input type="file" style="display:none;" id="inputHidden" name="file" accept="image/*"
+                        onchange="loadFile(event)" />
+
                     <label for="catname">Nom du Maine coon*: </label>
                     <input class="wide" type="text" name="catname"><br>
                     <label for="descri">Description: </label>
-                    <input class="wide" type="text" name="descri" style='height:120px'><br>
+                    <textarea class="wide" id="descri" name="descri" rows="4" cols="50"></textarea><br>
 
 
                     <h2>Contact</h2>
@@ -99,6 +110,24 @@
 
 
         <div id="footer"></div>
+        <script>
+            function isFileImage(file) {
+                return file && file['type'].split('/')[0] === 'image';
+            }
+            var loadFile = function (event) {
+                var output = document.getElementById('output');
+                var file = event.target.files[0];
+                if (isFileImage(file)) {
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.style.display = 'block';
+                    output.onload = function () {
+                        URL.revokeObjectURL(output.src) // free memory
+                    }
+                }
+                else
+                    alert("Le fichier choisis n'est pas une image !")
+            };
+        </script>
         <script type="text/javascript" src="/js/header.js"></script>
         <script type="text/javascript" src="/js/menu.js"></script>
         <script type="text/javascript" src="/js/footer.js"></script>
