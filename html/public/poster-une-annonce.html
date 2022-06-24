@@ -33,7 +33,7 @@
                 background-color: lightblue;
             }
 
-            button {
+            input[type=submit] {
                 background-color: #4CAF50;
                 /* Green */
                 border: none;
@@ -75,18 +75,18 @@
 
 
         <div id="header"></div>
-
         <div id="site_content">
             <div id="sidebar_container"></div>
             <!--Main Content Start Here-->
             <div id="content">
                 <h1>Donner votre Maine coon </h1>
-                <form action="http://localhost:3000/insert" method="POST">
+                <form action="http://localhost:3000/insert" enctype="multipart/form-data" method="POST">
+
                     <label for="image">Photo du maine coon:</label>
                     <input type="button" id="loadImg" value="Choisissez une photo"
                         onclick="document.getElementById('inputHidden').click();" />
                     <img id="output" alt="Photo du maine coon à donner" width="200px" />
-                    <input type="file" style="display:none;" id="inputHidden" name="img" accept="image/*"
+                    <input type="file" style="display:none;" id="inputHidden" name="photo" accept="image/*"
                         onchange="loadFile(event)" />
 
                     <label for="catname">Nom du Maine coon *: </label>
@@ -102,15 +102,14 @@
                     <input class="wide" type="email" name="email"><br>
                     <label for="phone">Votre téléphone: (optionnel) </label>
                     <input class="wide" type="tel" name="phone"><br>
-                    <button type="submit">Poster l'annonce</button>
+
+                    <input type="submit" value="Poster l'annonce" />
 
                 </form>
-
             </div>
             <!--Main Content End Here-->
 
         </div>
-
 
         <div id="footer"></div>
         <script>
