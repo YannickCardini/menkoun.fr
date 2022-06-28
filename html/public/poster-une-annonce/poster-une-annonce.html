@@ -80,7 +80,7 @@
             <!--Main Content Start Here-->
             <div id="content">
                 <h1>Donner votre Maine coon </h1>
-                <form action="http://51.79.255.217:3000/insert" enctype="multipart/form-data" method="POST">
+                <form action="poster-une-annonce.php" enctype="multipart/form-data" method="POST">
 
                     <label for="image">Photo du maine coon:</label>
                     <input type="button" id="loadImg" value="Choisissez une photo"
@@ -103,7 +103,7 @@
                     <label for="phone">Votre téléphone: (optionnel) </label>
                     <input class="wide" type="tel" name="phone"><br>
 
-                    <input type="submit" value="Poster l'annonce" />
+                    <input type="submit" value="Poster l'annonce" name="submit"/>
 
                 </form>
             </div>
@@ -129,6 +129,7 @@
                 else
                     alert("Le fichier choisis n'est pas une image !")
             };
+            
         </script>
         <script type="text/javascript" src="/js/select.js"></script>
         <script type="text/javascript" src="/js/header.js"></script>
