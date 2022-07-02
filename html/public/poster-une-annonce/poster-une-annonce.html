@@ -9,6 +9,8 @@
     <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <link rel="stylesheet" type="text/css" href="poster-une-annonce.css" />
+
     <link rel="stylesheet" type=" text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="icon" type="image/x-icon" href="/assets/miaouss.svg">
@@ -18,61 +20,6 @@
 
 <body>
     <div id="main">
-
-        <style>
-            .wide {
-                width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                box-sizing: border-box;
-                border: 1px solid #555;
-                outline: none;
-            }
-
-            .wide:focus {
-                background-color: lightblue;
-            }
-
-            input[type=submit] {
-                background-color: #4CAF50;
-                /* Green */
-                border: none;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
-                display: block;
-                margin: 3% auto;
-                font-weight: bold;
-            }
-
-            input[type=button] {
-                border: none;
-                color: black;
-                padding: 10px 22px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 12px;
-                margin: 4px 2px;
-                cursor: pointer;
-                display: block;
-                font-weight: bold;
-                border: 2px solid darkslategrey;
-                margin: 2% auto;
-            }
-
-            #output {
-                margin: auto;
-                display: none;
-            }
-        </style>
-
-
 
         <div id="header"></div>
         <div id="site_content">
@@ -89,17 +36,17 @@
                     <input type="file" style="display:none;" id="inputHidden" name="photo" accept="image/*"
                         onchange="loadFile(event)" />
 
-                    <label for="catname">Nom du Maine coon *: </label>
-                    <input class="wide" type="text" name="catname"><br>
+                    <label for="catname">Nom du Maine coon <span class="red">*</span>: </label>
+                    <input class="wide" type="text" name="catname" required><br>
                     <label for="descri">Description: </label>
                     <textarea class="wide" id="descri" name="descri" rows="4" cols="50"></textarea><br>
-                    <label for="region">Région *: </label>
-                    <select id="regions" name="region" class="wide">
+                    <label for="region">Région : </label>
+                    <select id="regions" name="region" class="wide" required>
                     </select>
 
                     <h2>Contact</h2>
-                    <label for="email">Votre e-mail *: </label>
-                    <input class="wide" type="email" name="email"><br>
+                    <label for="email">Votre e-mail <span class="red">*</span>: </label>
+                    <input class="wide" type="email" name="email" required><br>
                     <label for="phone">Votre téléphone: (optionnel) </label>
                     <input class="wide" type="tel" name="phone"><br>
 

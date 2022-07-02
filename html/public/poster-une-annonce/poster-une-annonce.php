@@ -14,7 +14,7 @@ $phone = $_POST['phone'];
 $date = date('Y-m-d H:i:s');
 
 //form photo
-$target_dir = "/var/www/mainecoon.click/uploads/";
+$target_dir = "/uploads/";
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 $uploadOk = 1;
 $error_txt = "Une erreur s'est produite";
@@ -32,7 +32,7 @@ try {
   die();
 }
 
-//Upload the photo to /var/www/mainecoon.click/uploads/
+//Upload the photo to /var/www/mainecoon.click/html/uploads/
 
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {
@@ -72,7 +72,7 @@ if ($uploadOk == 0) {
   echo str_replace("tittle", $error_txt, $pagecontents);
   // if everything is ok, try to upload file
 } else {
-  if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
+  if (move_uploaded_file($_FILES["photo"]["tmp_name"], $_SERVER["DOCUMENT_ROOT"] . $target_file)) {
     include("success.html");
   } else {
     $pagecontents = file_get_contents("error.html");

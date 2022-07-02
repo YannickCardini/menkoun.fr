@@ -1,0 +1,59 @@
+.cat-ruban {
+    margin: 5% auto;
+    display: block;
+}
+
+.titre-adoption {
+    text-align: center;
+    margin: 4%;
+    font-weight: bold;
+}
+
+.france {
+    text-shadow: 2px 2px 0px black;
+    /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.white {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: #f14e23;
+    border: 2px solid white;
+    text-align: center;
+    margin: 1%;
+    margin: 1% auto;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    border: 1px inset;
+    margin: auto;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2px 16px;
+    background: floralwhite;
+    overflow-wrap: break-word;
+}
