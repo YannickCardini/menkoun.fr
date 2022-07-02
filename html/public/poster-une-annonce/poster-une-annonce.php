@@ -6,10 +6,10 @@ $database = "mainecoon";
 $table = "donation";
 
 //sql value from form
-$catname = $_POST['catname'];
-$desci = $_POST['desci'];
+$catname = str_replace(['"',"'"], "\'", $_POST['catname']);
+$descri = str_replace(['"',"'"], "\'", $_POST['descri']);
 $region = $_POST['region'];
-$email = $_POST['email'];
+$email = str_replace(['"',"'"], "\'", $_POST['email']);;
 $phone = $_POST['phone'];
 $date = date('Y-m-d H:i:s');
 
@@ -24,6 +24,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 try {
   $query = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, dateposted)
   VALUES ('$catname', '$descri', '$region','$target_file','$phone','$email','$date')";
+  echo $query;
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
   $db->query($query);
 } catch (PDOException $e) {
