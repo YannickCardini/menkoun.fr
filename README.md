@@ -31,6 +31,8 @@ docker run -d --name=mainecoonclick -p 80:80 mainecoon_click
 ## TODO
 
 - button error/success page
+- loading animation adoption
+- check security fail sql input/php poster une annonce
 
 &nbsp;
 &nbsp;
