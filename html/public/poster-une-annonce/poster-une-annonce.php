@@ -33,7 +33,7 @@ try {
   die();
 }
 
-//Upload the photo to /var/www/mainecoon.click/html/uploads/
+//Upload the photo to /var/www/menkoun.fr/html/uploads/
 
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {

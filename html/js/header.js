@@ -13,7 +13,7 @@ createDivSlogan.append(createASlogan);
 createDivSlogan.setAttribute('class','slogan');
 createDivLogo.append(createDivSlogan);
 
-createH1.append(document.createTextNode('Mainecoon.click'));
+createH1.append(document.createTextNode('Menkoun.fr'));
 createATitle.append(createH1);
 createATitle.setAttribute('href','/');
 createDivLogo.append(createATitle);
