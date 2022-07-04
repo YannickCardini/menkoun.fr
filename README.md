@@ -1,7 +1,7 @@
 #  A Mainecoon Simple Website :cat:
 
 I feel that the simpler the better, both from a developer and a user standpoint.
-This light website use JavaScript/HTML/CSS/JQuery.
+This light website use JavaScript/HTML/CSS/JQuery/PHP/MySQL.
 
 ## How to get started :stars:
 
@@ -33,6 +33,9 @@ docker run -d --name=mainecoonclick -p 80:80 mainecoon_click
 - button error/success page
 - loading animation adoption
 - check security fail sql input/php poster une annonce
+- change logo mainecoonclick -> menkoun.fr
+- faire la page annonce.html
+- réécrire les url
 
 &nbsp;
 &nbsp;
