@@ -10,22 +10,22 @@ Just open [index.html](src/index.html) with a browser or run it on docker.
 ## Docker :whale:
 
 ```
-docker build -t mainecoon-click .
-docker run --name=mainecoonclick -p 3400:80 mainecoon-click
+docker build -t menkoun .
+docker run --name=menkoun -p 3400:80 menkoun
 ```
 ### Transfer to a VPS :computer:
 
 after build it:
 ```
-docker save mainecoon_click | gzip > mainecoon_click.tar.gz
-scp mainecoon_click.tar.gz ubuntu@51.79.255.217:~/Documents/docker/mainecoon_click.tar.gz && rm mainecoon_click.tar.gz
+docker save menkoun | gzip > menkoun.tar.gz
+scp menkoun.tar.gz ubuntu@51.79.255.217:~/Documents/docker/menkoun.tar.gz && rm menkoun.tar.gz
 ```
 
 ### On the VPS server :computer:
 
 ```
-docker load < /home/ubuntu/Documents/docker/mainecoon_click.tar.gz && rm /home/ubuntu/Documents/docker/mainecoon_click.tar.gz
-docker run -d --name=mainecoonclick -p 80:80 mainecoon_click
+docker load < /home/ubuntu/Documents/docker/menkoun.tar.gz && rm /home/ubuntu/Documents/docker/menkoun.tar.gz
+docker run -d --name=menkoun -p 80:80 menkoun
 ```
 
 ## TODO
