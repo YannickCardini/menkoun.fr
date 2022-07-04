@@ -1,4 +1,4 @@
-.cat-ruban {
+.cat-box {
     margin: 5% auto;
     display: block;
 }
@@ -53,20 +53,24 @@ li {
 
 .card:hover {
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.4);
-    cursor: pointer;
 }
 
 .container {
-    padding: 2px 16px;
     background: floralwhite;
     overflow-wrap: break-word;
+    width: 100%;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
     .card {
         margin: 5% auto;
         display: block;
         width: 300px;
+        cursor: pointer;
+    }
+
+    div.bot {
+        display: none;
     }
 }
 
@@ -83,3 +87,79 @@ li {
         background-color: hsl(200, 20%, 95%);
     }
 }
+
+div.bot button {
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    font-weight: 700;
+    border-radius: .5rem;
+    background-color: #4c51bf;
+    font-family: inherit;
+    border-width: 0;
+    font-size: 1.125rem;
+    width: 150px;
+    height: 50px;
+    float: right;
+    margin: 3%;
+    cursor: pointer;
+}
+
+div.subContainer {
+    display: flex;
+    height: 120px;
+}
+
+div.botLeft {
+    width: 60%;
+    height: 100%;
+    font-style: italic;
+}
+
+div.botRight {
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.annonceDelete {
+    position: absolute;
+    bottom: 0;
+    font-style: italic;
+    font-size: small;
+}
+
+div.bot {
+    height: 50%;
+    padding: 2px 16px;
+    position: relative;
+}
+
+div.top {
+    height: 50%;
+    padding: 2px 16px;
+    background: white;
+    overflow-x: hidden;
+}
+
+.email {
+    padding: 0;
+    margin-top: 3%;
+}
+
+.botLeft p {
+    align-items: center;
+    display: flex;
+}
+
+.botLeft p img{
+    width: 20px;
+    margin-right: 3%;
+
+}
+
+/* div.top p{
+    overflow-y:hidden;
+text-overflow:ellipsis;
+max-height:2.6em; } */

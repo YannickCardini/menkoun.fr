@@ -24,7 +24,6 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 try {
   $query = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, dateposted)
   VALUES ('$catname', '$descri', '$region','$target_file','$phone','$email','$date')";
-  echo $query;
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
   $db->query($query);
 } catch (PDOException $e) {
@@ -70,7 +69,6 @@ if (
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
   $pagecontents = file_get_contents("error.html");
-  echo str_replace("tittle", $error_txt, $pagecontents);
   // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["photo"]["tmp_name"], $_SERVER["DOCUMENT_ROOT"] . $target_file)) {
