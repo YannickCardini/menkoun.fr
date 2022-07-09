@@ -20,6 +20,8 @@ $uploadOk = 1;
 $error_txt = "Une erreur s'est produite";
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+$error_page = $_SERVER["DOCUMENT_ROOT"] . "/public/error.html";
+
 // Insert into mainecoon.donation
 try {
   $query = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, dateposted)
@@ -27,7 +29,7 @@ try {
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
   $db->query($query);
 } catch (PDOException $e) {
-  $pagecontents = file_get_contents("error.html");
+  $pagecontents = file_get_contents($error_page);
   echo str_replace("tittle", $e->getMessage(), $pagecontents);
   die();
 }
@@ -68,13 +70,13 @@ if (
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  $pagecontents = file_get_contents("error.html");
+  $pagecontents = file_get_contents($error_page);
   // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["photo"]["tmp_name"], $_SERVER["DOCUMENT_ROOT"] . $target_file)) {
-    include("success.html");
+    include($_SERVER["DOCUMENT_ROOT"] . "/public/success.html");
   } else {
-    $pagecontents = file_get_contents("error.html");
+    $pagecontents = file_get_contents($error_page);
     echo str_replace("tittle", "Une erreur lors du téléchargement du fichier", $pagecontents);
   }
 }

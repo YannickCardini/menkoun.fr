@@ -98,7 +98,7 @@ $(document).ready(function () {
             var iconEmail = document.createElement('img');
             var iconPhone = document.createElement('img');
 
-            createCard.onclick = function () { location.href = "/public/annonce.php"; }
+            createCard.onclick = function () { location.href = "/public/annonce.php?id=" + donation.id; }
 
             iconEmail.src = "/assets/email.png";
             iconEmail.alt = "Round Icon email";
@@ -108,7 +108,7 @@ $(document).ready(function () {
             createPphone.append(iconPhone);
 
             createButton.append(document.createTextNode('Voir l\'annonce'));
-            createButton.click = function () { location.href = "/public/annonce.php"; }
+            createButton.click = function () { location.href = "/public/annonce.php?id=" + donation.id; }
 
             createCard.className = "card";
 
