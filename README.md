@@ -31,7 +31,7 @@ docker run -d --name=menkoun -p 80:80 menkoun
 ## TODO
 
 - button error/success page
-- loading animation adoption
+- ~~loading animation adoption~~
 - ~~check security fail sql input/php poster une annonce~~ (OSEF)
 - ~~change logo mainecoonclick -> menkoun.fr~~
 - ~~faire la page annonce.html~~
@@ -39,6 +39,9 @@ docker run -d --name=menkoun -p 80:80 menkoun
 - do the credits page
 - add autodelete script for annonce
 - design annonce php
+- optimise loading page
+- faire un jeu mainecoon
+- refaire design page d'acceuil
 
 &nbsp;
 &nbsp;

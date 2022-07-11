@@ -1,7 +1,32 @@
-.cat-box {
-    margin: 5% auto;
-    display: block;
+#loading{
+    text-align: center;
 }
+
+#loading p {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.un{
+    animation-name: loading;
+    animation-duration: 0.4s;
+}
+
+.deux{
+    animation-name: loading;
+    animation-duration: 0.8s;
+}
+
+.trois{
+    animation-name: loading;
+    animation-duration: 1.2s;
+}
+
+@keyframes loading {
+    0% {opacity: 0;}
+    99% {opacity: 0;}
+    100% {opacity: 100%;}
+  }
 
 .titre-adoption {
     text-align: center;
@@ -11,7 +36,6 @@
 
 .france {
     text-shadow: 2px 2px 0px black;
-    /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 
 }
 
@@ -25,7 +49,7 @@
 
 .white {
     color: white;
-}
+} 
 
 ul {
     list-style: none;
