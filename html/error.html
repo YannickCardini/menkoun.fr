@@ -6,6 +6,8 @@
     <title>Erreur</title>
     <link rel="icon" type="image/x-icon" href="/img/miaouss.svg">
     <link rel="stylesheet" type="text/css" href="/css/error.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 </head>
 
 <body>
@@ -18,8 +20,64 @@
             l'annonce ou contacter le support si l'erreur persiste.
         </p>
 
-        <button>Contacter le support</button>
+        <button id="contact-support" onclick="displayContact()">Contacter le support</button>
+        <div class="container">
+            <form action="/contact-support.php" method="POST">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Votre e-mail.." required>
+
+                <label for="subject">Description du problème rencontré:</label>
+                <textarea id="subject" name="subject" placeholder="Écrire ici.." style="height:200px" required></textarea>
+
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
+
     </div>
+
+    <script>
+        function displayContact() {
+            var contactElem = document.getElementById("contact-support");
+            disappear(contactElem);
+
+        }
+
+
+    function disappear(elem) {
+        var id = null;
+        var opacity = 100;
+        clearInterval(id);
+        id = setInterval(frame, 8);
+        function frame() {
+          if (opacity == 0) {
+            clearInterval(id);
+            elem.remove();
+            appear();
+          } else {
+            opacity--; 
+            elem.style.opacity = opacity + '%'; 
+          }
+        }
+      }
+
+      function appear() {
+        var id = null;
+        var elem = document.getElementsByClassName("container")[0]; 
+        var opacity = 0;
+        elem.style.opacity = opacity + '%';  
+        elem.style.display = 'block' 
+        clearInterval(id);
+        id = setInterval(frame, 8);
+        function frame() {
+          if (opacity == 100) {
+            clearInterval(id);
+          } else {
+            opacity++; 
+            elem.style.opacity = opacity + '%'; 
+          }
+        }
+      }
+    </script>
 
 </body>
 
