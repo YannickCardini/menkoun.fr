@@ -36,10 +36,10 @@ docker run -d --name=menkoun -p 80:80 menkoun
 - ~~change logo mainecoonclick -> menkoun.fr~~
 - ~~faire la page annonce.html~~
 - réécrire les url
-- do the credits page
+- ~~do the credits page~~
 - add autodelete script for annonce
 - design annonce php
-- optimise loading page
+- ~~optimise loading page~~
 - faire un jeu mainecoon
 - refaire design page d'acceuil
 

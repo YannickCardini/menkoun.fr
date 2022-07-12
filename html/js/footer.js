@@ -1,13 +1,17 @@
 
 var createA = document.createElement('a');
 var createImg = document.createElement('img');
-var createPFlatIcon = document.createElement('p');
-var createAFlatIcon = document.createElement('a');
-var createTextFlatIcon = document.createTextNode('Pokémon icônes créées par Roundicons Freebies - Flaticon');
 var createP = document.createElement('p');
+var createCreditsA = document.createElement('a');
+var createCreditsP = document.createElement('p');
 var createImgCopyright = document.createElement('img');
 var createTextP = document.createTextNode('Copyright ');
 var createTextP2 = document.createTextNode(' 2022 - All Rights Reserved.');
+
+
+createCreditsP.append(document.createTextNode("Crédits"));
+createCreditsA.append(createCreditsP);
+createCreditsA.href = "/public/credits.html";
 
 createP.append(createTextP);
 createImgCopyright.setAttribute('src', '/assets/Copyright.svg');
@@ -16,10 +20,6 @@ createImgCopyright.style.width = '11px';
 createP.append(createImgCopyright);
 createP.append(createTextP2);
 
-createAFlatIcon.setAttribute('href', 'https://www.flaticon.com/fr/icones-gratuites/pokemon')
-createAFlatIcon.setAttribute('title', 'pokémon icônes')
-createAFlatIcon.append(createTextFlatIcon);
-createPFlatIcon.append(createAFlatIcon);
 createImg.setAttribute('alt', '/logo de maine coon click');
 createImg.setAttribute('src', '/assets/logo.png')
 createA.setAttribute('href', '/');
@@ -44,8 +44,8 @@ $.getJSON("/json/articles.json", function (json) {
 
     $('#footer').append(createA);
     $('#footer').append(createLinksHead);
-    $('#footer').append(createPFlatIcon);
     $('#footer').append(createP);
+    $('#footer').append(createCreditsA);
 
     $('#links-head').find("span:last").remove();
 
