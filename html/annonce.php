@@ -7,9 +7,9 @@
     <meta name="description" content="Vous souhaitez adopter un chat maine coon contre de bon soin ?" />
     <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type=" text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    <link rel="icon" type="image/x-icon" href="/assets/miaouss.svg">
+    <link rel="icon" type="image/x-icon" href="/img/miaouss.svg">
     <script type="text/javascript" src="/js/jquery.min.js"></script>
 </head>
 
@@ -22,7 +22,7 @@
     $database = "mainecoon";
     $table = "donation";
     $id = $_GET['id'];
-    $error_page = $_SERVER["DOCUMENT_ROOT"] . "/public/error.html";
+    $error_page = $_SERVER["DOCUMENT_ROOT"] . "/error.html";
 
     if (!is_numeric($id)) {
         $pagecontents = file_get_contents($error_page);

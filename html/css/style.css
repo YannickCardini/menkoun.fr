@@ -9,7 +9,7 @@ html {
 
 body {
   font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #F7F7F7 url(/assets/pattern.png) fixed;
+  background: #F7F7F7 url(/img/pattern.png) fixed;
   color: #555;
 }
 
@@ -224,7 +224,7 @@ ul {
 
 /* Replaces having to import the paperclip image individually for all items */
 .sidebar::before {
-  background: url("/assets/paperclip.png");
+  background: url("/img/paperclip.png");
   content: '';
   z-index: 1;
   height: 84px;
@@ -415,4 +415,48 @@ table tr td {
 
 .fa.checked {
   color: orange;
+}
+
+button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  font-weight: bold;
+}
+
+.ou-center {
+  text-align: center;
+}
+
+.img-table {
+  width: 100%;
+}
+
+.info {
+  margin: 4%;
+  font-style: italic;
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }

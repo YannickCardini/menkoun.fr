@@ -35,7 +35,7 @@ docker run -d --name=menkoun -p 80:80 menkoun
 - ~~check security fail sql input/php poster une annonce~~ (OSEF)
 - ~~change logo mainecoonclick -> menkoun.fr~~
 - ~~faire la page annonce.html~~
-- réécrire les url
+- ~~réécrire les url~~
 - ~~do the credits page~~
 - add autodelete script for annonce
 - design annonce php

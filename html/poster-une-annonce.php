@@ -20,7 +20,7 @@ $uploadOk = 1;
 $error_txt = "Une erreur s'est produite";
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-$error_page = $_SERVER["DOCUMENT_ROOT"] . "/public/error.html";
+$error_page = $_SERVER["DOCUMENT_ROOT"] . "/error.html";
 
 // Insert into mainecoon.donation
 try {
@@ -74,7 +74,7 @@ if ($uploadOk == 0) {
   // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["photo"]["tmp_name"], $_SERVER["DOCUMENT_ROOT"] . $target_file)) {
-    include($_SERVER["DOCUMENT_ROOT"] . "/public/success.html");
+    include($_SERVER["DOCUMENT_ROOT"] . "/success.html");
   } else {
     $pagecontents = file_get_contents($error_page);
     echo str_replace("tittle", "Une erreur lors du téléchargement du fichier", $pagecontents);

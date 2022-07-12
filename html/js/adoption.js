@@ -15,7 +15,7 @@ $(document).ready(function () {
 
                 createIcon.type = "image/x-icon";
                 createIcon.rel = "icon";
-                createIcon.src = '/assets/add.png';
+                createIcon.src = '/img/add.png';
                 createIcon.className = "rotate";
                 createIcon.style.width = "21px";
                 createIcon.style.float = "right";
@@ -77,7 +77,7 @@ $(document).ready(function () {
 
 
     function displayContent(span, icon) {
-        icon.src = icon.src.split("/")[icon.src.split("/").length - 1] == 'add.png' ? "/assets/minus.png" : "/assets/add.png";
+        icon.src = icon.src.split("/")[icon.src.split("/").length - 1] == 'add.png' ? "/img/minus.png" : "/img/add.png";
         span.style.display = span.style.display == 'none' ? 'block' : 'none';
     }
 
@@ -104,7 +104,7 @@ $(document).ready(function () {
         var createImg = document.createElement("img");
         var createP = document.createElement('p');
 
-        createImg.setAttribute('src', '/assets/tefel/sad.gif');
+        createImg.setAttribute('src', '/img/tefel/sad.gif');
         createImg.style.display = 'block';
         createImg.style.width = "17%";
         createImg.style.margin = 'auto';
@@ -139,21 +139,21 @@ $(document).ready(function () {
         var iconEmail = document.createElement('img');
         var iconPhone = document.createElement('img');
 
-        createCard.onclick = function () { location.href = "/public/annonce.php?id=" + donation.id; }
+        createCard.onclick = function () { location.href = "/annonce.php?id=" + donation.id; }
 
-        iconEmail.src = "/assets/email.png";
+        iconEmail.src = "/img/email.png";
         iconEmail.alt = "Round Icon email";
-        iconPhone.src = "/assets/phone.png";
+        iconPhone.src = "/img/phone.png";
         iconPhone.alt = "Round Icon phone number";
         createPemail.append(iconEmail);
         createPphone.append(iconPhone);
 
         createButton.append(document.createTextNode('Voir l\'annonce'));
-        createButton.click = function () { location.href = "/public/annonce.php?id=" + donation.id; }
+        createButton.click = function () { location.href = "/annonce/" + donation.id; }
 
         createCard.className = "card";
 
-        createImg.src = donation.img ? donation.img : "/assets/tefel/lying.gif";
+        createImg.src = donation.img ? donation.img : "/img/tefel/lying.gif";
         createImg.alt = "Avatar";
         createImg.style.width = "300px";
         createImg.style.height = "300px";

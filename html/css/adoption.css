@@ -126,6 +126,7 @@ div.bot button {
     float: right;
     margin: 3%;
     cursor: pointer;
+    padding: 0;
 }
 
 div.subContainer {

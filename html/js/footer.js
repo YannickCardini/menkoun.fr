@@ -11,17 +11,17 @@ var createTextP2 = document.createTextNode(' 2022 - All Rights Reserved.');
 
 createCreditsP.append(document.createTextNode("Crédits"));
 createCreditsA.append(createCreditsP);
-createCreditsA.href = "/public/credits.html";
+createCreditsA.href = "/credits";
 
 createP.append(createTextP);
-createImgCopyright.setAttribute('src', '/assets/Copyright.svg');
+createImgCopyright.setAttribute('src', '/img/Copyright.svg');
 createImgCopyright.setAttribute('alt', 'copyright logo');
 createImgCopyright.style.width = '11px';
 createP.append(createImgCopyright);
 createP.append(createTextP2);
 
 createImg.setAttribute('alt', '/logo de maine coon click');
-createImg.setAttribute('src', '/assets/logo.png')
+createImg.setAttribute('src', '/img/logo.png')
 createA.setAttribute('href', '/');
 createA.append(createImg);
 
