@@ -38,7 +38,7 @@ docker run -d --name=menkoun -p 80:80 menkoun
 - ~~réécrire les url~~
 - ~~do the credits page~~
 - add autodelete script for annonce
-- design annonce php
+- ~~design annonce php~~
 - ~~optimise loading page~~
 - faire un jeu mainecoon
 - refaire design page d'acceuil
