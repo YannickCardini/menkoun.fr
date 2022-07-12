@@ -139,7 +139,7 @@ $(document).ready(function () {
         var iconEmail = document.createElement('img');
         var iconPhone = document.createElement('img');
 
-        createCard.onclick = function () { location.href = "/annonce.php?id=" + donation.id; }
+        createCard.onclick = function () { location.href = "/annonce/" + donation.id; }
 
         iconEmail.src = "/img/email.png";
         iconEmail.alt = "Round Icon email";
