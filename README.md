@@ -41,7 +41,7 @@ docker run -d --name=menkoun -p 80:80 menkoun
 - ~~design annonce php~~
 - ~~optimise loading page~~
 - faire un jeu mainecoon
-- refaire design page d'acceuil
+- ~~refaire design page d'acceuil~~
 - ~~dispay too small phone error/success page~~
 
 &nbsp;

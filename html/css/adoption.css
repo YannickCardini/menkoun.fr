@@ -96,6 +96,10 @@ li {
     div.bot {
         display: none;
     }
+
+    p{
+        font-size: 3.8vw;
+    }
 }
 
 .skeleton {

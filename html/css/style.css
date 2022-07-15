@@ -427,7 +427,6 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
   display: block;
   margin: auto;
@@ -445,10 +444,23 @@ button {
 .info {
   margin: 4%;
   font-style: italic;
+  text-align: center;
 }
 
 .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.adoption-text {
+  margin: 1%;
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+}
+
+.description-don {
+  margin-top: 3%;
+  text-align: center;
 }
 
 @keyframes skeleton-loading {
@@ -458,5 +470,14 @@ button {
 
   100% {
     background-color: hsl(200, 20%, 95%);
+  }
+}
+
+@media only screen and (max-width:850px) {
+  #site_content {
+    padding: 0;
+  }
+  #content{
+    padding: 5%;
   }
 }
