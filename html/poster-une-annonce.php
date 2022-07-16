@@ -12,10 +12,10 @@ $descri = str_replace(['"',"'"], "\'", $_POST['descri']);
 $region = $_POST['region'];
 $email = str_replace(['"',"'"], "\'", $_POST['email']);;
 $phone = $_POST['phone'];
-$date = date('Y-m-d H:i:s');
-$date = date('Y-m-d H:i:s', strtotime($date . "+1 week"));
+$today = date('Y-m-d H:i:s');
+$date = date('Y-m-d H:i:s', strtotime($today . "+1 week"));
 
-$sql = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, dateposted)
+$sql = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, expiredate)
 VALUES ('$catname', '$descri', '$region','$target_file','$phone','$email','$date')";
 
 //form photo
@@ -27,6 +27,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 $error_page = "./error.html";
 
+//  Insert into mainecoon.donation
 $con=mysqli_connect($servername,$user,$password,$database);
 
 if (mysqli_connect_errno()) {
@@ -43,22 +44,6 @@ if (!mysqli_query($con,$sql)) {
 }
 
 mysqli_close($con);
-
-
-// // Insert into mainecoon.donation
-// try {
-//   $query = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, dateposted)
-//   VALUES ('$catname', '$descri', '$region','$target_file','$phone','$email','$date')";
-//   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-//   $db->query($query);
-//   echo $query;
-
-// } catch (PDOException $e) {
-//   echo $e;
-//   $pagecontents = file_get_contents($error_page);
-//   echo str_replace("tittle", $e->getMessage(), $pagecontents);
-//   die();
-// }
 
 //Upload the photo to /var/www/menkoun.fr/html/uploads/
 

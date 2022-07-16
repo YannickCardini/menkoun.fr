@@ -9,17 +9,17 @@
 
 .un{
     animation-name: loading;
-    animation-duration: 0.4s;
+    animation-duration: 0.8s;
 }
 
 .deux{
     animation-name: loading;
-    animation-duration: 0.8s;
+    animation-duration: 1.6s;
 }
 
 .trois{
     animation-name: loading;
-    animation-duration: 1.2s;
+    animation-duration: 2.4s;
 }
 
 @keyframes loading {

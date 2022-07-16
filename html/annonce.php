@@ -23,34 +23,69 @@
     $password = "password";
     $database = "mainecoon";
     $table = "donation";
+    $servername = "localhost";
     $id = $_GET['id'];
-    $error_page = $_SERVER["DOCUMENT_ROOT"] . "/error.html";
+    $error_page = "error.html";
+    $today = date('Y-m-d');
+
 
     if (!is_numeric($id)) {
         $pagecontents = file_get_contents($error_page);
-        echo str_replace("tittle", "Mauvais paramètre URL", $pagecontents);
+        $pagecontents = str_replace("tittle", "Mauvais paramètre URL", $pagecontents);
+        $pagecontents =  str_replace("publication", "recherche", $pagecontents);
+        echo str_replace("publier", "rechercher", $pagecontents);
     }
 
-    try {
-        $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-        $query = "SELECT * FROM mainecoon.donation";
-        if ($id == -1)
-            $query = $query . " ORDER BY ID DESC LIMIT 1";
-        else
-            $query = $query . " WHERE id=" . $id;
-        $result = $db->query($query)->fetch();
-    } catch (PDOException $e) {
+    $query = "SELECT * FROM mainecoon.donation WHERE DATE(expiredate) > '$today'";
+    if ($id == -1)
+        $query = $query . " ORDER BY ID DESC LIMIT 1";
+    else
+        $query = $query . " AND id=" . $id;
+
+        
+    $con = mysqli_connect($servername, $user, $password, $database);
+
+
+    if (mysqli_connect_errno()) {
+        echo $query;
         $pagecontents = file_get_contents($error_page);
-        echo str_replace("tittle", $e->getMessage(), $pagecontents);
-        die();
+        $pagecontents = str_replace("tittle", mysqli_connect_error(), $pagecontents);
+        $pagecontents =  str_replace("publication", "recherche", $pagecontents);
+        echo str_replace("publier", "rechercher", $pagecontents);
+        exit();
     }
 
-    function IsNullOrEmptyString($str){
+    $res = mysqli_query($con, $query);
+    // Perform a query, check for error
+    if (!$res) {
+        $pagecontents = file_get_contents($error_page);
+        $pagecontents = str_replace("tittle", mysqli_error($con), $pagecontents);
+        $pagecontents =  str_replace("publication", "recherche", $pagecontents);
+        echo str_replace("publier", "rechercher", $pagecontents);
+        exit();
+    }
+    $result = mysqli_fetch_assoc($res);
+
+    if($result == NULL) {
+        $pagecontents = file_get_contents($error_page);
+        $pagecontents = str_replace("tittle", "Annonce expirée ou inexsistante", $pagecontents);
+        $pagecontents =  str_replace("publication", "recherche", $pagecontents);
+        echo str_replace("publier", "rechercher", $pagecontents);
+        exit();
+    }
+
+    mysqli_close($con);
+
+    function IsNullOrEmptyString($str)
+    {
         return ($str === null || trim($str) === '');
     }
 
-    if(IsNullOrEmptyString(($result['phone'])))
+    if (IsNullOrEmptyString(($result['phone'])))
         $result['phone'] = 'Non renseigné';
+    
+    if (IsNullOrEmptyString(($result['img'])))
+        $result['img'] = '/img/photo-non-disponible.jpg';
 
     ?>
     <div id="header"></div>
@@ -75,7 +110,7 @@
                     <p><?php echo $result['descri']; ?></p>
                 </div>
                 <br>
-                <p class="dateposted">Cette annonce sera supprimée le <?php echo $result['dateposted']; ?></p>
+                <p class="expiredate">Cette annonce sera retirée le <?php echo $result['expiredate']; ?></p>
             </div>
             <?php
 

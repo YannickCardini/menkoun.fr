@@ -3,14 +3,12 @@ $user = "loubard";
 $password = "password";
 $database = "mainecoon";
 $table = "donation";
+$today = date('Y-m-d');
 
 try {
     $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-    $query = "SELECT * FROM mainecoon.donation";
+    $query = "SELECT * FROM mainecoon.donation WHERE DATE(expiredate) > '$today'";
     $result = $db->query($query);
-    // while ($row = $result->fetch()) {
-    //     echo $row['catname']."<br />\n";
-    // }
     $to_encode = array();
     while ($row = $result->fetch(PDO::FETCH_ASSOC)){
         $to_encode[] = $row;
