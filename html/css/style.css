@@ -445,6 +445,7 @@ button {
   margin: 4%;
   font-style: italic;
   text-align: center;
+  font-size: 17px;
 }
 
 .skeleton {
@@ -455,12 +456,13 @@ button {
   margin: 1%;
   font-style: italic;
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .description-don {
   margin-top: 3%;
   text-align: center;
+  font-size: 18px;
 }
 
 @keyframes skeleton-loading {
@@ -477,7 +479,25 @@ button {
   #site_content {
     padding: 0;
   }
-  #content{
+
+  #content {
     padding: 5%;
   }
+}
+
+@media only screen and (min-width:850px) {
+  .donner-mainecoon {
+    margin: 3% auto 2%;
+    font-size: 20px;
+    padding: 18px 36px;
+  }
+}
+
+.welcome {
+  font-size: 290%;
+}
+
+.index-h2 {
+  text-align: center;
+  font-size: 220%;
 }
