@@ -15,9 +15,6 @@ $phone = $_POST['phone'];
 $today = date('Y-m-d H:i:s');
 $date = date('Y-m-d H:i:s', strtotime($today . "+1 week"));
 
-$sql = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, expiredate)
-VALUES ('$catname', '$descri', '$region','$target_file','$phone','$email','$date')";
-
 //form photo
 $target_dir = "/uploads/";
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
@@ -26,6 +23,9 @@ $error_txt = "Une erreur s'est produite";
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 $error_page = "./error.html";
+
+$sql = "INSERT INTO mainecoon.donation (catname, descri, region, img, phone, email, expiredate)
+VALUES ('$catname', '$descri', '$region','$target_file','$phone','$email','$date')";
 
 //  Insert into mainecoon.donation
 $con=mysqli_connect($servername,$user,$password,$database);
