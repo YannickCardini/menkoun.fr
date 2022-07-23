@@ -1,6 +1,20 @@
 {
     "articles": [
         {
+            "name": "Maine coon beu",
+            "href": "/blog/maine-coon-bleu",
+            "description": "Aussi bizarre que cela puisse paraître, les chats Maine Coon bleus existent vraiment ! Il ne s'agit ...",
+            "subtitle": "Qu'est ce que c'est ?",
+            "date": "23 juillet 2022"
+        },
+        {
+            "name": "Main coon black silver",
+            "href": "/blog/black-silver",
+            "description": "Les chats Main Coon black silver ont un pelage noir et argenté qui a la particularité ...",
+            "subtitle": "Qu'est ce que c'est ?",
+            "date": "16 juin 2022"
+        },
+        {
             "name": "Brown blotched tabby maine coon",
             "href": "/blog/brown-blotched-tabby",
             "description": "Le Maine Coon brown blotched tabby (brun tacheté tigré en français) est ...",
@@ -13,13 +27,6 @@
             "description": "Les chats Maine Coon sont le choix parfait si vous recherchez une race de ...",
             "subtitle": "Comment les élever ?",
             "date": "7 juin 2022"
-        },
-        {
-            "name": "Main coon black silver",
-            "href": "/blog/black-silver",
-            "description": "Les chats Main Coon black silver ont un pelage noir et argenté qui a la particularité ...",
-            "subtitle": "Qu'est ce que c'est ?",
-            "date": "16 juin 2022"
         }
     ]
 }
